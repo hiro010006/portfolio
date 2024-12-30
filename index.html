@@ -1,257 +1,285 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
 
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/pages/home.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js" defer></script>
-    <script src="js/main.js" defer></script>
-    <script src="js/menu.js" defer></script>
-    <script src="js/animations.js" defer></script>
-    <script src="js/form.js" defer></script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/components.css">
+	<link rel="stylesheet" href="css/pages/home.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js" defer></script>
+	<script src="js/particles/particles.js" defer></script>
+	<script src="js/particles/app.js" defer></script>
+	<script src="js/main.js" defer></script>
+	<script src="js/menu.js" defer></script>
+	<script src="js/animations.js" defer></script>
+	<script src="js/eventHandlers.js" defer></script>
 
 </head>
+
 <body id="top">
-    <header class="header js-header">
-        <div class="header__inner">
-            <div class="header__container">
-                <div class="header__logo js-nav-link">
-                    <a href="/">
-                      <img src="img\h_logo.png" width="25" height="41" alt="h">
-                    </a>
-                </div>
-                <button type="button" class="header__button js-nav-button" aria-label="ナビゲーションを開く">
-                    <div class="header__menu_mark"></div>
-                </button>
-                <nav class="header__nav">
-                    <ol class="header__list">
-                        <li class="header__item sp-only js-nav-link">
-                            <a href="/" class="header__link">
-                                <span class="header__wrapper">
-                                    <span class="header__text">Home</span>
-                                    <span class="header__number">(01)</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="header__item js-nav-link">
-                            <a href="/profile/" class="header__link">
-                                <span class="header__wrapper">
-                                    <span class="header__text">Profile</span>
-                                    <span class="header__number">(02)</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="header__item js-nav-link">
-                            <a href="#activities" class="header__link">
-                                <span class="header__wrapper">
-                                    <span class="header__text">Activities</span>
-                                    <span class="header__number">(03)</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="header__item js-nav-link">
-                            <a href="#skills" class="header__link">
-                                <span class="header__wrapper">
-                                    <span class="header__text">Skills</span>
-                                    <span class="header__number">(04)</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="header__item js-nav-link">
-                            <a href="#other" class="header__link">
-                                <span class="header__wrapper">
-                                    <span class="header__text">Other</span>
-                                    <span class="header__number">(05)</span>
-                                </span>
-                            </a>
-                        </li>
-                    </ol>
-                    <ul class="sns-list sns-list--white">
-                        <li class="sns-list__item">
-                            <a href="https://twitter.com/yukalqqqozlz" target="_blank" rel="noopener noreferrer" aria-label="Twitterを開く">
-                                <svg>
-                                <use href="assets/images/common/icon_twitter.svg#twitter"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="sns-list__item">
-                            <a href="https://note.com/yukango" target="_blank" rel="noopener noreferrer" aria-label="noteを開く">
-                                <svg>
-                                    <use href="assets/images/common/icon_note.svg#note"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="sns-list__item">
-                            <a href="https://www.pinterest.jp/yukalqqqozlz/" target="_blank" rel="noopener noreferrer" aria-label="Pinterestを開く">
-                                <svg>
-                                    <use href="assets/images/common/icon_pinterest.svg#pinterest"/>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <div class="loading js-loading">
-        <div class="loading__logo-wrapper js-loading-wrapper">
-            <span class="loading__logo js-loading-logo01">
-                <img src="/assets/images/common/loading-1.svg" alt="">
-            </span>
-        </div>
-    </div>
+	<header class="header js-header">
+		<div class="header__inner">
+			<div class="header__container">
+				<div class="header__logo js-nav-link">
+					<a href="/">
+						<img src="img/h_logo.png" width="25" height="41" alt="h">
+					</a>
+				</div>
+				<button type="button" class="header__button js-nav-button" aria-label="ナビゲーションを開く">
+					<div class="header__menu_mark"></div>
+				</button>
+				<nav class="header__nav">
+					<ol class="header__list">
+						<li class="header__item sp-only js-nav-link">
+							<a href="/" class="header__link">
+								<span class="header__wrapper">
+									<span class="header__text">Home</span>
+									<span class="header__number">(01)</span>
+								</span>
+							</a>
+						</li>
+						<li class="header__item js-nav-link">
+							<a href="/profile/" class="header__link">
+								<span class="header__wrapper">
+									<span class="header__text">Profile</span>
+									<span class="header__number">(02)</span>
+								</span>
+							</a>
+						</li>
+						<li class="header__item js-nav-link">
+							<a href="#activities" class="header__link">
+								<span class="header__wrapper">
+									<span class="header__text">Activities</span>
+									<span class="header__number">(03)</span>
+								</span>
+							</a>
+						</li>
+						<li class="header__item js-nav-link">
+							<a href="#skills" class="header__link">
+								<span class="header__wrapper">
+									<span class="header__text">Skills</span>
+									<span class="header__number">(04)</span>
+								</span>
+							</a>
+						</li>
+						<li class="header__item js-nav-link">
+							<a href="#other" class="header__link">
+								<span class="header__wrapper">
+									<span class="header__text">Other</span>
+									<span class="header__number">(05)</span>
+								</span>
+							</a>
+						</li>
+					</ol>
+					<ul class="sns-list sns-list--white">
+						<li class="sns-list__item">
+							<a href="https://github.com/hiro010006" target="_blank" rel="noopener noreferrer" aria-label="Githubを開く">
+								<svg xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 496 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+									<path
+										d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="loading js-loading">
+		<div class="loading__logo-wrapper js-loading-wrapper">
+			<span class="loading__logo js-loading-logo01">
+				<img src="img/h_logo.png" alt="">
+			</span>
+		</div>
+	</div>
 
-    <main>
-        <div class="mainvisual js-mainvisual">
-            <div class="mainvisual__inner">
-                <h1 class="mainvisual__copy">
-                    <span class="mainvisual__wrapper">
-                        <span class="mainvisual__copy01 js-split-target js-mv-split-text">Welcome to</span>
-                    </span>
-                    <span class="mainvisual__wrapper">
-                        <span class="mainvisual__line js-mv-line"></span>
-                        <span class="mainvisual__copy02 js-mv-copy">Web Designer</span>
-                    </span>
-                    <span class="mainvisual__copy03 js-mv-typo">
-                        <img src="/assets/images/top/top_typo.webp" width="1478" height="657" alt="Yuka Kanno">
-                    </span>
-                    <span class="mainvisual__wrapper">
-                        <span class="mainvisual__copy04 js-split-target js-mv-split-text">Portfolio</span>
-                    </span>
-                </h1>
-                <div class="mainvisual__scroll js-mv-scroll">(Scroll down)</div>
-            </div>
-            <div class="mainvisual__circle js-mv-circle">
-                <img src="/assets/images/top/top_circle.webp" width="800" height="800" alt="Thank you for visiting my site!">
-            </div>
-        </div>
+	<main>
+		<div class="mainvisual js-mainvisual">
+			<div id="js-particles"></div>
+			<div class="mainvisual__inner">
+				<h1 class="mainvisual__copy">
+					<span class="mainvisual__wrapper">
+						<span class="mainvisual__copy01 js-split-target js-mv-split-text">Welcome to</span>
+					</span>
+					<span class="mainvisual__wrapper">
+						<span class="mainvisual__line js-mv-line"></span>
+						<span class="mainvisual__copy02 js-mv-copy">Hiro's</span>
+					</span>
+					<span class="mainvisual__wrapper">
+						<span class="mainvisual__copy04 js-split-target js-mv-split-text">Portfolio</span>
+					</span>
+				</h1>
+				<div class="mainvisual__scroll js-mv-scroll">(Scroll down)</div>
+			</div>
+		</div>
 
-        <section id="profile" class="profile">
-            <div class="profile__inner">
-                <h2 class="heading heading--profile">
-                    <span class="heading__wrapper">
-                        <span class="heading__en split-text js-split-target js-observe-target">Profile</span>
-                    </span>
-                    <span class="heading__jp animation-fadein js-observe-target">私について</span>
-                </h2>
-                <div class="profile__container">
-                    <div class="profile__block animation-fadein js-observe-target">
-                        <h3 class="profile__name">
-                            Hiro
-                        </h3>
-                        <p class="profile__description">
-                            2005年、大阪出身。2021年に大阪府立大学高専入学し、校名の変更を経て2024年現在大阪公立大学高専メカトロニクスコース在学中。
-                            「人間の活動領域を広げる研究開発」に興味を持ち、高専での工学基礎科目に加えロボット制御やソフトウェア開発のためプログラミングについて学んでいる。
-                        </p>
-                        <ul class="sns-list sns-list--black">
-                            <li class="sns-list__item">
-                                <a href="https://twitter.com/yukalqqqozlz" target="_blank" rel="noopener noreferrer" aria-label="Twitterを開く">
-                                    <svg>
-                                    <use href="assets/images/common/icon_twitter.svg#twitter"/>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="sns-list__item">
-                                <a href="https://note.com/yukango" target="_blank" rel="noopener noreferrer" aria-label="noteを開く">
-                                    <svg>
-                                    <use href="assets/images/common/icon_note.svg#note"/>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="sns-list__item">
-                                <a href="https://www.pinterest.jp/yukalqqqozlz/" target="_blank" rel="noopener noreferrer" aria-label="Pinterestを開く">
-                                    <svg>
-                                    <use href="assets/images/common/icon_pinterest.svg#pinterest"/>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="profile__button-wrapper">
-                            <a href="/profile/" class="profile__button">
-                                <span class="profile__button-text">View Profile</span>
-                                <span class="profile__button-arrow"></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="profile__images">
-                        <div class="profile__image js-observe-target">
-                            <img src="/assets/images/top/top_yuka-kanno.webp" width="1388" height="1962" alt="菅野友香">
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </section>
+		<section id="profile" class="profile">
+			<div class="profile__inner">
+				<h2 class="heading heading--profile">
+					<span class="heading__wrapper">
+						<span class="heading__en split-text js-split-target js-observe-target">Profile</span>
+					</span>
+					<span class="heading__jp animation-fadein js-observe-target">私について</span>
+				</h2>
+				<div class="profile__container">
+					<div class="profile__block animation-fadein js-observe-target">
+						<h3 class="profile__name">
+							Hiro
+						</h3>
+						<p class="profile__description">
+							2005年、大阪出身。2021年に大阪府立大学高専入学し、校名の変更を経て2024年現在大阪公立大学高専メカトロニクスコース在学中。
+							「人間の活動領域を広げる研究開発」に興味を持ち、高専での工学基礎科目に加えロボット制御やソフトウェア開発のためプログラミングについて学んでいる。
+						</p>
+						<ul class="sns-list sns-list--black">
+							<li class="sns-list__item">
+								<a href="https://github.com/hiro010006" target="_blank" rel="noopener noreferrer"
+									aria-label="Githubを開く">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 496 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+										<path
+											d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+									</svg>
+								</a>
+							</li>
+						</ul>
+						<div class="profile__button-wrapper">
+							<a href="/profile/" class="profile__button">
+								<span class="profile__button-text">View Profile</span>
+								<span class="profile__button-arrow"></span>
+							</a>
+						</div>
+					</div>
+					<div class="profile__images">
+						<div class="profile__image js-observe-target">
+							<img src="img/cat_drawing.svg" width="1388" height="1962" alt="Hiro">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-        <section id="activities">
-            <h2>科目成果物</h2>
-            <div class="activities">
-                <h3>成果物1</h3>
-                <p>説明文: [ここに成果物1の詳細を記載]</p>
-            </div>
-            <div class="activities">
-                <h3>成果物2</h3>
-                <p>説明文: [ここに成果物2の詳細を記載]</p>
-            </div>
-        </section>
+		<section id="activities" class="activities">
+			<div class="activities__inner">
+				<h2 class="heading heading--activities">
+					<span class="heading__wrapper">
+						<span class="heading__en split-text js-split-target js-observe-target">Activities</span>
+					</span>
+					<span class="heading__jp animation-fadein js-observe-target">製作物について</span>
+				</h2>
+				<div class="activities__container">
+					<ol class="activities__list">
+						<li class="activities__item">
+							<div class="activities__content"  data-align="right">								
+								<div class="activities__text">
+									<h3 class="activities__sub-heading animation-fadein js-observe-target">
+										<span class="activities__title">基礎研究</span>
+									</h3>
+									<span class="activities__line js-observe-target"></span>
+									<p class="activities__description animation-fadein js-observe-target">
+										基礎研究ではロボットアームを用いてお寿司を運ぶという課題に班で取り組みました。班の中で私はプログラムによる制御および注文用webアプリのバックエンドを担当しました。webアプリからの注文に応じて、ストックされているお寿司から注文があったお寿司を検知し掴む制御や一部注文画面のフロントも作成しました。
+									</p>
+								</div>
+								<div class="activities__image js-observe-target">
+									<video src="video/Dobot_flame_model.mp4" width="400px" loop autoplay muted playsinline></video>
+								</div>
+							</div>
+						</li>
+						<li class="activities__item">							
+							<div class="activities__content" data-align="left">								
+								<div class="activities__text">
+									<h3 class="activities__sub-heading animation-fadein js-observe-target">
+										<span class="activities__title">電子機械工学実験</span>
+									</h3>
+									<span class="activities__line js-observe-target"></span>
+									<p class="activities__description animation-fadein js-observe-target">
+										電子機械工学実験ではPythonのTkinterを用いたプログラム作成課題においてTetrisを作成しました。
+									</p>
+								</div>
+								<div class="activities__image js-observe-target">
+									<video src="video/Tetris.mp4" width="400px" loop autoplay muted playsinline></video>
+								</div>
+							</div>
+						</li>
+						<li class="activities__item">
+							<div class="activities__content" data-align="right">								
+								<div class="activities__text">
+									<h3 class="activities__sub-heading animation-fadein js-observe-target">
+										<span class="activities__title">CAD設計製図</span>
+									</h3>
+									<span class="activities__line js-observe-target"></span>
+									<p class="activities__description animation-fadein js-observe-target">
+										CAD設計製図ではFusionやCreoを用いた3Dモデルの設計に加え、kiCADを用いた電気回路の設計を行いました。
+									</p>
+								</div>
+								<div class="activities__image js-observe-target">
+									<img src="img/cat_drawing.svg" width="694" height="981" alt="Hiro">
+								</div>
+							</div>							
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
 
-        <section id="skills" class="skills">
-            <div class="skills__inner">
-              <h2 class="heading heading--skills">
-                <span class="heading__wrapper">
-                  <span class="heading__en split-text js-split-target js-observe-target">Skills</span>
-                </span>
-                <span class="heading__jp animation-fadein js-observe-target">
-                  できること
-                </span>
-              </h2>
-              <div class="skills__container">
-                <ol class="skills__list">
-                  <li class="skills__item">
-                    <h3 class="skills__sub-heading animation-fadein js-observe-target">
-                      <span class="skills__number">(01)</span>
-                      <span class="skills__title">Web Design</span>
-                    </h3>
-                    <span class="skills__line js-observe-target"></span>
-                    <p class="skills__description animation-fadein js-observe-target">
-                      Webサイト、バナーなどのグラフィックデザイン制作ができます。細部に妥協せず、良いものを作るためにこだわりを持って取り組んでいます。また見た目の美しさだけでなく、情報設計や機能性といった部分にも配慮します。有用で質が高く、またその先で、人の心を動かせるようなデザインを目指しています。
-                    </p>
-                    <span class="skills__tool">
-                      Tools：Illustrator / Photoshop / XD
-                    </span>
-                  </li>
-                  <li class="skills__item">
-                    <h3 class="skills__sub-heading animation-fadein js-observe-target">
-                      <span class="skills__number">(02)</span>
-                      <span class="skills__title">Web Development</span>
-                    </h3>
-                    <span class="skills__line js-observe-target"></span>
-                    <p class="skills__description animation-fadein js-observe-target">
-                      HTML・CSSを使用し、デザインを正しく再現します。またJavascriptを使用し、サイトに動きを加えることも可能です。アニメーションによって世界観を演出し、よりWebデザインの魅力を引き上げられるような実装を目指しています。コードには規則性があり、誰が見ても分かりやすいコーディングを心掛けています。
-                    </p>
-                    <span class="skills__tool">
-                      Tools：Visual Studio Code
-                    </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-        </section>
+		<section id="skills" class="skills">
+			<div class="skills__inner">
+				<h2 class="heading heading--skills">
+					<span class="heading__wrapper">
+						<span class="heading__en split-text js-split-target js-observe-target">Skills</span>
+					</span>
+					<span class="heading__jp animation-fadein js-observe-target">
+						できること
+					</span>
+				</h2>
+				<div class="skills__container">
+					<ol class="skills__list">
+						<li class="skills__item">
+							<h3 class="skills__sub-heading animation-fadein js-observe-target">
+								<span class="skills__number">(01)</span>
+								<span class="skills__title">Web Design</span>
+							</h3>
+							<span class="skills__line js-observe-target"></span>
+							<p class="skills__description animation-fadein js-observe-target">
+								Webサイト、バナーなどのグラフィックデザイン制作ができます。細部に妥協せず、良いものを作るためにこだわりを持って取り組んでいます。また見た目の美しさだけでなく、情報設計や機能性といった部分にも配慮します。有用で質が高く、またその先で、人の心を動かせるようなデザインを目指しています。
+							</p>
+							<span class="skills__tool">
+								Tools：Illustrator / Photoshop / XD
+							</span>
+						</li>
+						<li class="skills__item">
+							<h3 class="skills__sub-heading animation-fadein js-observe-target">
+								<span class="skills__number">(02)</span>
+								<span class="skills__title">Web Development</span>
+							</h3>
+							<span class="skills__line js-observe-target"></span>
+							<p class="skills__description animation-fadein js-observe-target">
+								HTML・CSSを使用し、デザインを正しく再現します。またJavascriptを使用し、サイトに動きを加えることも可能です。アニメーションによって世界観を演出し、よりWebデザインの魅力を引き上げられるような実装を目指しています。コードには規則性があり、誰が見ても分かりやすいコーディングを心掛けています。
+							</p>
+							<span class="skills__tool">
+								Tools：Visual Studio Code
+							</span>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
 
-        <section id="hobbies">
-            <h2>趣味・部活動</h2>
-            <p>[ここに趣味や部活動の詳細を記載]</p>
-        </section>
-    </main>
+		<section id="hobbies">
+			<h2>趣味・部活動</h2>
+			<p>[ここに趣味や部活動の詳細を記載]</p>
+		</section>
+	</main>
 
-    <footer>
-        <p>&copy; 2024 学生ポートフォリオ</p>
-    </footer>
+	<footer>
+		<p>&copy; 2024 Hiro</p>
+	</footer>
 </body>
+
 </html>
