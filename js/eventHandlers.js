@@ -1,6 +1,5 @@
 mediaQuery.addEventListener("change", resizeReload);
 mediaQuery.addEventListener("change", visible);
-mediaQuery.addEventListener("change", footerParallax);
 
 window.addEventListener("load", () => {
     if (sessionStorage.getItem("finished")) {

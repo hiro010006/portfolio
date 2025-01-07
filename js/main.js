@@ -64,52 +64,22 @@ const visible = () => {
     }
 }
 
-// footerParallax
-const footer = document.querySelector(".js-footer");
+function setSkillsProgress(element) {
+  const percentage = parseFloat(element.dataset.percentage);
+  const radius = parseFloat(element.dataset.radius);
 
-const footerParallax = () => {
-  const parallaxTrigger = document.querySelector(".js-parallax-trigger");
-  const others = document.querySelector(".js-others");
-
-  let scrollerEnd;
-  let Y_PERCENT_VALUE;
-
-  if(mediaQuery.matches) {
-    scrollerEnd = "bottom 30%";
-  } else {
-    scrollerEnd = "bottom center";
+  if (isNaN(percentage) || isNaN(radius)) {
+    console.error('データ属性が正しく設定されていません。');
+    return;
   }
 
-  if(others !== null) {
-    if(mediaQuery.matches) {
-      Y_PERCENT_VALUE = -30;
-    } else {
-      Y_PERCENT_VALUE = -5;
-    }
-  } else {
-    Y_PERCENT_VALUE = -55;
-  }
+  const circumference = 2 * Math.PI * radius;
+  const dashArray = `${(percentage / 100) * circumference} ${circumference}`;
 
-  gsap.set(footer, {
-    opacity: 0.5,
-    yPercent: Y_PERCENT_VALUE
-  });
-
-  gsap.to(footer, {
-    opacity: 1,
-    yPercent: 0,
-    scrollTrigger: {
-      trigger: parallaxTrigger,
-      start: "bottom bottom",
-      end: scrollerEnd,
-      scrub: true
-    }
-  });
+  element.setAttribute("stroke-dasharray", dashArray);
 }
 
-if(footer !== null) {
-  footerParallax();
-}
+document.querySelectorAll(".skills-progress").forEach(setSkillsProgress);
 
 // splitText
 const splitText = () => {

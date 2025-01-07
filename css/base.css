@@ -3,13 +3,15 @@
 :root {
   --main-font: freight-big-pro, serif;
   --sub-font: nort, Yu Gothic UI, sans-serif;
-  --bg-color: #FDFDFD;
+  --bg-color: transparent;
   --black: #1D1D1D;
   --white: #FFFFFF;
   --gray: #727272;
+  --dark-gray: #363636;
   --LOADING_INDEX: 70;
   --BUTTON_INDEX: 60;
   --NAV_INDEX: 50;
+  --HEADER_TEXT_INDEX: 45;
   --HEADER_INDEX: 40;
   --BG_INDEX: 30;
   --MAIN_INDEX: 20;
@@ -26,6 +28,8 @@ html {
     color: var(--black);
     font-family: var(--sub-font);
     line-height: 1;
+    overflow-x: hidden;
+    margin: 0px;
   }
   
   main {

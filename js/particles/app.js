@@ -41,12 +41,12 @@ window.addEventListener('load', function(){
           }
         },
         "opacity": {
-          "value": 0.5,
+          "value": 0.8,
           "random": true,
           "anim": {
             "enable": true,
-            "speed": 1,
-            "opacity_min": 0.1,
+            "speed": 0.5,
+            "opacity_min": 0.2,
             "sync": false
           }
         },
@@ -63,7 +63,7 @@ window.addEventListener('load', function(){
         "line_linked": {
           "enable": true,
           "distance": 150,
-          "color": "#ffffff",
+          "color": "#aaaaaa",
           "opacity": 0.4,
           "width": 1
         },

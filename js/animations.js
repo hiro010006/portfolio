@@ -9,8 +9,18 @@ const firstAnimation = () => {
     body.classList.remove("is-fixed");
   }
 
-  gsap.set(".js-loading-logo01", {
+  gsap.set([".js-loading-logo01", ".js-mainvisual__inner"], {
     autoAlpha: 0
+  })
+  gsap.set([".js-polygon01", ".js-polygon02", ".js-polygon03", ".js-polygon04"], {
+    clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)",
+    autoAlpha: 1,
+    zIndex: 40
+  })
+  gsap.set(".js-header__container", {
+    xPercent: "-100",
+    autoAlpha: 0,
+    zIndex: 45
   })
 
   tl.to(".js-loading-logo01", {
@@ -25,21 +35,46 @@ const firstAnimation = () => {
       duration: 0.2,
       ease: "none"
   })
-    .to(".js-loading-logo01", {
-      display: "none",
-      duration: 0.2,
-      ease: "none"
-  })
     .to(".js-loading", {
-      yPercent: "-100",
+      xPercent: "-100",
       duration: 0.8,
       ease: "power4.inOut"
   }, "+=0.2")
+    .to(".js-polygon04", {
+      clipPath: "polygon(0 0, 0 100%, 4% 100%, 20% 0%)",
+      duration: 0.6,
+      autoAlpha: 0.5,
+      ease: 'power2.out'
+  }, "-=0.4")
+    .to(".js-polygon03", {
+      clipPath: "polygon(0 0, 0 100%, 0% 100%, 20% 100%)",
+      duration: 0.6,
+      autoAlpha: 0.5,
+      ease: 'power2.out'
+  }, "-=0.4")
+    .to(".js-polygon02", {
+      clipPath: "polygon(0 0, 0 100%, 0% 100%, 10% 100%)",
+      duration: 0.6,
+      autoAlpha: 0.5,
+      ease: 'power2.out'
+  }, "-=0.4")
+    .to(".js-polygon01", {
+      clipPath: "polygon(0 0, 0 100%, 0% 100%, 10% 0%)",
+      duration: 0.6,
+      autoAlpha: 0.5,
+      ease: 'power2.out'
+  }, "-=0.4")
+    .to(".js-header__container", {
+      xPercent: "0",
+      duration: 0.5,
+      autoAlpha: 1
+  })
+
     .to(".js-loading-wrapper", {
       autoAlpha: 0,
       duration: 0.2,
       onComplete: unfixedBackground, fvAnimation, visible
-  }, "<")
+  }, "+=1.4")
 };
 
 const destroy = () => {
@@ -57,12 +92,12 @@ const fvAnimation = () => {
 
   if(mainvisual !== null) {
     const mvAnimation = () => {
-      const resetStyle = () => {
+      /*const resetStyle = () => {
         header.style.transform = "";
         header.style.pointerEvents = "auto";
-      }
+      }*/
 
-      gsap.set([".js-mv-circle", ".js-mv-typo", ".js-mv-scroll"], {
+      gsap.set(".js-mv-scroll", {
         autoAlpha: 0
       })
 
@@ -71,16 +106,20 @@ const fvAnimation = () => {
         yPercent: 100
       })
 
-      gsap.set(".js-mv-line", {
-        scaleX: 0,
-        transformOrigin: "0 0"
+      gsap.set(".js-mainvisual__inner", {
+        autoAlpha: 1
       })
 
-      gsap.set(".js-header", {
+      /*gsap.set(".js-mv-line", {
+        scaleX: 0,
+        transformOrigin: "0 0"
+      })*/
+
+      /*gsap.set(".js-header", {
         autoAlpha: 0,
         y: -50,
         pointerEvents: "none"
-      })
+      })*/
 
       tl.to(".js-mv-split-text .js-letter", {
         autoAlpha: 1,
@@ -89,39 +128,29 @@ const fvAnimation = () => {
         stagger: 0.03,
         ease: "power4.out"
       })
-      .to(".js-mv-line", {
+      /*.to(".js-mv-line", {
         scaleX: 1,
         duration: 1.2,
         ease: "power4.out"
-      }, "-=1.5")
+      }, "-=1.5")*/
       .to(".js-mv-copy", {
         autoAlpha: 1,
         yPercent: 0,
         duration: 1.4,
         ease: "power4.out"
       }, "<")
-      .to(".js-mv-circle", {
-        autoAlpha: 1,
-        duration: 1.0,
-        ease: "power4.out"
-      }, "-=1.0")
-      .to(".js-mv-typo", {
-        autoAlpha: 1,
-        duration: 2.0,
-        ease: "power4.out"
-      }, "-=1.0")
       .to(".js-mv-scroll", {
         autoAlpha: 1,
         duration: 1.4,
         ease: "power4.out"
-      }, "-=1.8")
-      .to(".js-header", {
+      }, "-=2.8")
+      /*.to(".js-header", {
         y: 0,
         autoAlpha: 1,
         duration: 1.4,
         ease: "power4.out",
         onComplete: resetStyle
-      }, "<")
+      }, "<")*/
     }
 
     mvAnimation();
